@@ -1,0 +1,2 @@
+* 6-20 * * * /bin/bash /home/pi/upstream/upstream-image.bash > /home/pi/upstream/cron_captures.log
+* 6 * * * /bin/bash /home/pi/upstream/upstream-sound.bash 3600 > /home/pi/upstream/cron_captures.log
