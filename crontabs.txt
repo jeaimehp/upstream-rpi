@@ -1,3 +1,7 @@
-* 6-20 * * * /bin/bash /home/pi/upstream/upstream-image.bash >> /home/pi/upstream/cron_captures.log
-* 6 * * * /bin/bash /home/pi/upstream/upstream-sound.bash 3600 >> /home/pi/upstream/cron_captures.log
-* * * * * /usr/bin/python3 /home/pi/upstream/upstream-allsensors-csv.py >> /home/pi/upstream/data/sensors-`(/bin/date +%Y%m%d)`.log
+#*/30 0,1,11-23 * * * /bin/bash /home/pi/upstream/upstream-image.bash >> /home/pi/upstream/cron_captures.log >/dev/null 2>&1
+#* 11 * * * /bin/bash /home/pi/upstream/upstream-sound.bash 3600 >> /home/pi/upstream/cron_captures.log
+#* * * * * /bin/bash /home/pi/upstream/upstream-sensorscron.bash >> /home/pi/upstream/cron_captures.log
+@reboot sleep 120 && /home/pi/upstream/bootinfo.bash|bash
+0 1 * * * /home/pi/upstream/at-30before-sunrise.bash "/home/pi/upstream/upstream-sound.bash 3600" > /home/pi/upstream/data/soundsetting-`(/bin/date +%Y%m%d)`.log
+0 11 * * * /home/pi/upstream/bootinfo.bash|bash >/dev/null 2>&1
+0 15 * * * /home/pi/upstream/upload-sound-gdrive.bash >/dev/null 2>&1
