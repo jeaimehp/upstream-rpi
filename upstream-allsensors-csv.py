@@ -2,7 +2,7 @@
 
 import bme680
 import time
-import Adafruit_ADS1x15
+#import Adafruit_ADS1x15
 
 # Choose a gain of 1 for reading voltages from 0 to 4.09V.
 # Or pick a different gain to change the range of voltages that are read:
@@ -14,7 +14,7 @@ import Adafruit_ADS1x15
 #  -  16 = +/-0.256V
 # See table 3 in the ADS1015/ADS1115 datasheet for more info on gain.
 
-adc = Adafruit_ADS1x15.ADS1115()
+#adc = Adafruit_ADS1x15.ADS1115()
 
 try:
     sensor = bme680.BME680(bme680.I2C_ADDR_PRIMARY)
@@ -36,8 +36,8 @@ temp_sum = 0
 humidity_sum = 0
 pressure_sum = 0
 gas_sum = 0
-a0_sum = 0
-a2_sum = 0
+#a0_sum = 0
+#a2_sum = 0
 i = 0
 epoch_time = int(time.time())
 
@@ -47,9 +47,10 @@ while (i < collections):
     humidity_sum = humidity_sum + sensor.data.humidity
     pressure_sum = pressure_sum + sensor.data.pressure
     gas_sum = gas_sum + sensor.data.gas_resistance
-    a0_sum = adc.read_adc(0, gain=1)
-    a2_sum = adc.read_adc(2, gain=1)
+    #a0_sum = adc.read_adc(0, gain=1)
+    #a2_sum = adc.read_adc(2, gain=1)
     time.sleep (1)
     i += 1
 
-print(epoch_time,temp_sum/collections,humidity_sum/collections,pressure_sum/collections,gas_sum/collections,a0_sum/collections,a2_sum/collections)
+print(epoch_time,temp_sum/collections,humidity_sum/collections,pressure_sum/collections,gas_sum/collections)
+     #   ,a0_sum/collections,a2_sum/collections)
