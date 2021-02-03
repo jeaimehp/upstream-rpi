@@ -12,7 +12,7 @@
 # Remove things from the queue with atrm <atq_job_number>
 
 # This variable can be altered to use any time wanted
-SUNRISE_TIME=`/usr/bin/python3 /home/pi/upstream/upstream-sunrise.py`
+SUNRISE_TIME=`grep $(date +"%m/%d/%Y") /home/pi/upstream/2021-sunrise-sunset.txt |awk '{print $2,$1}'`
 ##Debug - remove comment to run immediately
 #SUNRISETIME="now"
 
