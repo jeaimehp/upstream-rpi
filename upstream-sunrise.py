@@ -13,5 +13,6 @@ URL = "https://api.sunrise-sunset.org/json?lat=30.087479&lng=-97.169851&date=tod
 
 r = requests.get(url = URL)
 data = r.json()
-sunrise = datetime.datetime.strptime(data['results']['sunrise'],'%Y-%m-%dT%H:%M:%S%z').time()
-print(sunrise.strftime('%H:%M'))
+#sunrise = datetime.datetime.strptime(data['results']['sunrise'],'%Y-%m-%dT%H:%M:%S%z').time()
+sunrise = datetime.datetime.strptime(data['results']['sunrise'][0:19],'%Y-%m-%dT%H:%M:%S')
+print(sunrise.strftime('%I:%M %p %m/%d/%Y'))

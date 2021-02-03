@@ -1,0 +1,36 @@
+2021/01/31 15:01:02 INFO  : 
+Transferred:   	  335.723M / 1.080 GBytes, 30%, 5.466 MBytes/s, ETA 2m20s
+Errors:                 0
+Checks:                 0 / 0, -
+Transferred:            0 / 1, 0%
+Elapsed time:      1m1.4s
+Transferring:
+ *                                1612049641.wav: 30% /1.080G, 5.621M/s, 2m17s
+
+2021/01/31 15:02:02 INFO  : 
+Transferred:   	  689.602M / 1.080 GBytes, 62%, 5.680 MBytes/s, ETA 1m13s
+Errors:                 0
+Checks:                 0 / 0, -
+Transferred:            0 / 1, 0%
+Elapsed time:      2m1.4s
+Transferring:
+ *                                1612049641.wav: 62% /1.080G, 6.078M/s, 1m8s
+
+2021/01/31 15:03:02 INFO  : 
+Transferred:   	    1.029G / 1.080 GBytes, 95%, 5.810 MBytes/s, ETA 8s
+Errors:                 0
+Checks:                 0 / 0, -
+Transferred:            0 / 1, 0%
+Elapsed time:      3m1.4s
+Transferring:
+ *                                1612049641.wav: 95% /1.080G, 5.734M/s, 9s
+
+2021/01/31 15:03:13 INFO  : 1612049641.wav: Copied (new)
+2021/01/31 15:03:13 INFO  : 1612049641.wav: Deleted
+2021/01/31 15:03:13 INFO  : 
+Transferred:   	    1.080G / 1.080 GBytes, 100%, 5.775 MBytes/s, ETA 0s
+Errors:                 0
+Checks:                 1 / 1, 100%
+Transferred:            1 / 1, 100%
+Elapsed time:     3m11.5s
+

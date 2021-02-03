@@ -11,5 +11,8 @@ Sound using SEEED Respeaker Hat (6-mic/8-channel)
 0 1 * * * /home/pi/upstream/at-30before-sunrise.bash "/home/pi/upstream/upstream-sound-respeaker.bash 3600" >> /home/pi/upstream/data/soundsetting-`(/bin/date +%Y%m%d)`.log
 0 1 * * * /home/pi/upstream/at-30before-sunset.bash "/home/pi/upstream/upstream-sound-respeaker.bash 3600" >> /home/pi/upstream/data/soundsetting-`(/bin/date +%Y%m%d)`.log
 
+#Check Sunset Job
+* 19 * * * /home/pi/upstream/upstream-atqcheck.bash  >> /home/pi/upstream/cron_captures.log 
+
 0 11 * * * /home/pi/upstream/bootinfo.bash|bash >/dev/null 2>&1
 0 15 * * * /home/pi/upstream/upload-sound-gdrive.bash >/dev/null 2>&1

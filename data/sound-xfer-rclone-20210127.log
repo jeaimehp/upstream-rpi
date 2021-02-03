@@ -1,0 +1,100 @@
+2021/01/27 15:00:01 NOTICE: Config file "/home/pi/.config/rclone/rclone.conf" not found - using defaults
+2021/01/27 15:00:01 Failed to create file system for "gdrive:Upstream-Stengl-Data/sound/": didn't find section in config file
+2021/01/27 15:00:01 NOTICE: Config file "/home/pi/.config/rclone/rclone.conf" not found - using defaults
+2021/01/27 15:00:01 Failed to create file system for "gdrive:Upstream-Stengl-Data/sound/": didn't find section in config file
+2021/01/27 15:00:01 NOTICE: Config file "/home/pi/.config/rclone/rclone.conf" not found - using defaults
+2021/01/27 15:00:01 Failed to create file system for "gdrive:Upstream-Stengl-Data/sound/": didn't find section in config file
+2021/01/27 15:00:01 NOTICE: Config file "/home/pi/.config/rclone/rclone.conf" not found - using defaults
+2021/01/27 15:00:01 Failed to create file system for "gdrive:Upstream-Stengl-Data/sound/": didn't find section in config file
+2021/01/27 15:00:02 NOTICE: Config file "/home/pi/.config/rclone/rclone.conf" not found - using defaults
+2021/01/27 15:00:02 Failed to create file system for "gdrive:Upstream-Stengl-Data/sound/": didn't find section in config file
+2021/01/27 18:54:11 INFO  : 1611264579.wav: Copied (new)
+2021/01/27 18:54:11 INFO  : 1611264579.wav: Deleted
+2021/01/27 18:54:11 INFO  : 
+Transferred:   	    4.883M / 4.883 MBytes, 100%, 2.064 MBytes/s, ETA 0s
+Errors:                 0
+Checks:                 1 / 1, 100%
+Transferred:            1 / 1, 100%
+Elapsed time:        2.3s
+
+2021/01/27 18:54:13 INFO  : 1611264599.wav: Copied (new)
+2021/01/27 18:54:13 INFO  : 1611264599.wav: Deleted
+2021/01/27 18:54:13 INFO  : 
+Transferred:   	 1000.043k / 1000.043 kBytes, 100%, 516.870 kBytes/s, ETA 0s
+Errors:                 0
+Checks:                 1 / 1, 100%
+Transferred:            1 / 1, 100%
+Elapsed time:        1.9s
+
+2021/01/27 18:55:19 INFO  : 
+Transferred:   	      536M / 1.717 GBytes, 30%, 8.171 MBytes/s, ETA 2m29s
+Errors:                 0
+Checks:                 0 / 0, -
+Transferred:            0 / 1, 0%
+Elapsed time:      1m5.5s
+Transferring:
+ *                                1611319980.wav: 30% /1.717G, 9.024M/s, 2m15s
+
+2021/01/27 18:56:19 INFO  : 
+Transferred:   	    1.068G / 1.717 GBytes, 62%, 8.706 MBytes/s, ETA 1m16s
+Errors:                 0
+Checks:                 0 / 0, -
+Transferred:            0 / 1, 0%
+Elapsed time:      2m5.5s
+Transferring:
+ *                                1611319980.wav: 62% /1.717G, 9.310M/s, 1m11s
+
+2021/01/27 18:57:19 INFO  : 
+Transferred:   	    1.609G / 1.717 GBytes, 94%, 8.880 MBytes/s, ETA 12s
+Errors:                 0
+Checks:                 0 / 0, -
+Transferred:            0 / 1, 0%
+Elapsed time:      3m5.5s
+Transferring:
+ *                                1611319980.wav: 93% /1.717G, 9.289M/s, 11s
+
+2021/01/27 18:57:35 INFO  : 1611319980.wav: Copied (new)
+2021/01/27 18:57:35 INFO  : 1611319980.wav: Deleted
+2021/01/27 18:57:35 INFO  : 
+Transferred:   	    1.717G / 1.717 GBytes, 100%, 8.697 MBytes/s, ETA 0s
+Errors:                 0
+Checks:                 1 / 1, 100%
+Transferred:            1 / 1, 100%
+Elapsed time:     3m22.1s
+
+2021/01/27 18:57:38 INFO  : 1611337030.wav: Copied (new)
+2021/01/27 18:57:38 INFO  : 1611337030.wav: Deleted
+2021/01/27 18:57:38 INFO  : 
+Transferred:   	    3.662M / 3.662 MBytes, 100%, 1.444 MBytes/s, ETA 0s
+Errors:                 0
+Checks:                 1 / 1, 100%
+Transferred:            1 / 1, 100%
+Elapsed time:        2.5s
+
+2021/01/27 18:58:38 INFO  : 
+Transferred:   	      512M / 1.287 GBytes, 39%, 8.458 MBytes/s, ETA 1m35s
+Errors:                 0
+Checks:                 0 / 0, -
+Transferred:            0 / 1, 0%
+Elapsed time:      1m0.5s
+Transferring:
+ *                                1611703860.wav: 38% /1.287G, 8.441M/s, 1m35s
+
+2021/01/27 18:59:38 INFO  : 
+Transferred:   	    1.005G / 1.287 GBytes, 78%, 8.539 MBytes/s, ETA 33s
+Errors:                 0
+Checks:                 0 / 0, -
+Transferred:            0 / 1, 0%
+Elapsed time:      2m0.5s
+Transferring:
+ *                                1611703860.wav: 78% /1.287G, 8.962M/s, 32s
+
+2021/01/27 19:00:12 INFO  : 1611703860.wav: Copied (new)
+2021/01/27 19:00:13 INFO  : 1611703860.wav: Deleted
+2021/01/27 19:00:13 INFO  : 
+Transferred:   	    1.287G / 1.287 GBytes, 100%, 8.472 MBytes/s, ETA 0s
+Errors:                 0
+Checks:                 1 / 1, 100%
+Transferred:            1 / 1, 100%
+Elapsed time:     2m35.6s
+
