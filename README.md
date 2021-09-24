@@ -19,6 +19,10 @@
  * Micro USB Power Switch [Amazon Link](https://www.amazon.com/Onite-Micro-Female-raspberry-Switch/dp/B07FCJ7GJZ/ref=sr_1_10?dchild=1&keywords=usb+micro+b+switch&qid=1632507428&sr=8-10)
  * LiPo Battery (4000mAh) [Amazon Link](https://www.amazon.com/dp/B07BTTV39D/?coliid=I2ER69ZBU0AWOY&colid=3FFCGV5UCE80E&psc=1&ref_=lv_ov_lig_dp_it)
 
+### Cellular Addition
+ * LTE Cellular Modem [Amazon Link](https://www.amazon.com/dp/B07XXBQPZL/?coliid=I2IGLUEWQIJ1BO&colid=3FFCGV5UCE80E&psc=1&ref_=lv_ov_lig_dp_it)
+  * *Note: Cell Service Required with Data Plan 
+
 ### Solar Powered Additions
 * Enclosure
   *  300x200x170mm Junction Box with Mounting Plate IP67 Project Box [Amazon Link](https://www.amazon.com/QILIPSU-Stainless-285x195x130mm-Waterproof-Electrical/dp/B096X82P1L/ref=sr_1_1_sspa?crid=2X1JRXAXYR0U1&dchild=1&keywords=ip67%2Benclosure%2Bclear%2Bcover&qid=1632505812&sprefix=ip67%2Benclosure%2Celectronics%2C369&sr=8-1-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExTlQxV0o5U0k0QktTJmVuY3J5cHRlZElkPUEwMDEyOTI4M002SjhDTEg5WTBTRiZlbmNyeXB0ZWRBZElkPUEwMDc2NDc5MlpITzNaWVBWODkzTSZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&th=1)
@@ -37,3 +41,5 @@
   *  Switch, USB Extension Inline Rocker Switch [Amazon Link](https://www.amazon.com/Electop-USB-Switch-Extension-Inline/dp/B07CG2VGWG/ref=sr_1_5?dchild=1&keywords=usb+a+to+usb+micro+b+with+switch&qid=1632507177&sr=8-5)
   *  USB A to Micro B Cable [Amazon Link](https://www.amazon.com/DETHINTON-Braided-Charging-Tablets-Android/dp/B071VX675L/ref=sr_1_1_sspa?dchild=1&keywords=usb+a+to+usb+micro+b+6%22&qid=1632507280&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExUlpRUkFETzQ4QklNJmVuY3J5cHRlZElkPUExMDQ4MzMzQlBZUkk0VjAyWDk4JmVuY3J5cHRlZEFkSWQ9QTA3Njk4MzYxTkE5VDFIRDNJUzIyJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==)
 
+## Site Deployment Additions
+* Fence Pole [Lowes Link](https://www.lowes.com/pd/Common-1-5-8-in-x-1-5-8-in-x-8-ft-Actual-1-66-in-x-1-66-in-x-8-ft-Silver-Galvanized-Steel-Chain-Link-Fence-Line-Post/999990212)
