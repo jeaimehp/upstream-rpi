@@ -3,7 +3,7 @@
 ## Bill of Materials
 ### Base Unit
 * Raspberry Pi Zero W (Alternative versions A+, 3B+, 4)
-  * (Amazon Link)[https://www.amazon.com/Vilros-Raspberry-Kit-Premium-Essential-Accessories/dp/B0748NK116/ref=sr_1_8?crid=313EIUJFELK4V&dchild=1&keywords=raspberry+pi+zero&qid=1632504963&sprefix=raspberrypi+%2Caps%2C217&sr=8-8]
+  * [Amazon Link](https://www.amazon.com/Vilros-Raspberry-Kit-Premium-Essential-Accessories/dp/B0748NK116/ref=sr_1_8?crid=313EIUJFELK4V&dchild=1&keywords=raspberry+pi+zero&qid=1632504963&sprefix=raspberrypi+%2Caps%2C217&sr=8-8)
 * USB Stereo Microphone (Andrea Communications C1-1021450-100 PureAudio USB-SA External Digital USB Sound Card with Superbeam Array2S Microphone Bundle)
   * (Amazon Link)[https://www.amazon.com/Andrea-Communications-C1-1021450-100-USB-SA-Microphone/dp/B003VW5Q08/ref=pd_bxgy_img_1/132-3810654-7323147?pd_rd_w=gPu6v&pf_rd_p=c64372fa-c41c-422e-990d-9e034f73989b&pf_rd_r=PK7BCHX1W8JVN906MC1E&pd_rd_r=b3bcae36-decb-457f-b27e-ed1d194c88aa&pd_rd_wg=LDDA5&pd_rd_i=B003VW5Q08&psc=1]
 *  Real-time Clock for Raspberry Pi (Dorhea 4PCS DS3231 Real Time Clock Module RTC Clock Memory Module 3.3V/5V for Raspberry Pi)
