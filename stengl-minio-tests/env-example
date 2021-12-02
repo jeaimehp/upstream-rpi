@@ -1,0 +1,22 @@
+#######################################
+# MiniIO API setup                    #
+#######################################
+# !!!NOTE BEFORE UPLOADING TO REPOSITORY!!!
+# Be sure to censor the access and secret keys from the "MiniIO API Setup" Section if written in clear text!
+# This example uses python-dotenv for this purpose with the SERVER, ACCESS_KEY, and SECRET_KEY set in an .env file
+# in the same directory as this python file with the format:
+#
+# SERVER = "server_url:port"
+# ACCESS_KEY = "key_for_user"
+# SECRET_KEY = "secret_for_user"
+#
+# If using git/github ensure the .gitignore has ".env" so as to not include it in uploads
+#
+# You can modify this example file and then move it to become the ".env" 
+#
+#   Ex. mv env-example .env
+#
+######################################
+SERVER = "server_url:port"
+ACCESS_KEY = "key_for_user"
+SECRET_KEY = "secret_for_user"
