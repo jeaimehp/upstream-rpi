@@ -17,3 +17,9 @@
 
 0 11 * * * /home/pi/upstream/bootinfo.bash|bash >/dev/null 2>&1
 #0 15 * * * /home/pi/upstream/upload-sound-gdrive.bash >/dev/null 2>&1
+
+#Sound file (wav) transfers
+* 11 * * * /home/pi/upstream/stengl-minio-tests/transferwavfiles.bash >> /home/pi/upstream/data/sound-xfer-`(/bin/date +%Y%m%d)`.log
+
+#Sound file (wav)  clean up
+* 14 1-31/2 * * /home/pi/upstream/stengl-minio-tests/cleanup-all-transferedwavfiles.bash >> /home/pi/upstream/data/soundfile-cleanup-`(/bin/date +%Y%m%d)`.log

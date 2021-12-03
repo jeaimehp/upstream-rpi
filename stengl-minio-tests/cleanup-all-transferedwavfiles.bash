@@ -13,13 +13,13 @@ fi
 
 echo "Checking files."
 
-#cat $SOUNDFILES_DIR/../data/sound-xfer-temp.log-$TIMESTAMP | while read line;do /usr/bin/python3 $SOUNDFILES_DIR/../stengl-minio-tests/sendtocorral-minio.py $line; done
+#cat $SOUNDFILES_DIR/../data/sound-xfer-temp.log-$TIMESTAMP | while read line;do /usr/bin/python3 $SOUNDFILES_DIR/../stengl-minio-tests/sendtocorral-minio.py $SOUNDFILES_DIR/$line; done
 cat $SOUNDFILES_DIR/../data/sound-xfer-temp.log-$TIMESTAMP | while read line; do
-	if [[ `(/usr/bin/python3 $SOUNDFILES_DIR/../stengl-minio-tests/stengl-minio-md5check-cleanoutput.py $line)` == true ]]; then
+	if [[ `(/usr/bin/python3 $SOUNDFILES_DIR/../stengl-minio-tests/stengl-minio-md5check-cleanoutput.py $SOUNDFILES_DIR/$line)` ]]; then
 	      echo "File $line already sync'd removing from local machine"
-	      rm $line
+	      rm $SOUNDFILES_DIR/$line
         else 
-              echo "File $line needs to be transfered (sent) to Corral"
+              echo "File $SOUNDFILES_DIR/$line needs to be transfered (sent) to Corral"
 	      /usr/bin/python3 $SOUNDFILES_DIR/../stengl-minio-tests/stengl-minio-md5check.py $SOUNDFILES_DIR/$line
 	fi;
 done
