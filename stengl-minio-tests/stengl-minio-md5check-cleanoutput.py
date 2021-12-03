@@ -92,22 +92,10 @@ foundFile = False
 for obj in objects:
   if obj.object_name == os.path.split(fileName)[1]:
     foundFile = True
-    print("\nFILE NAME \t| FILE SIZE(bytes) \t| LAST MODIFIED DATE \t| MD5 CHECKSUM")
-    print("-----------------------------------------------------------")
-    print(f"{obj.object_name} \t {obj.size} \t {obj.last_modified} \t {obj.etag}")
-    
     # Comparing sizes between local and remote files
-    print(f"\nChecking File Sizes and MD5 Checksum's between the local and remote versions of {os.path.split(fileName)[1]}")
     localFileMD5 = os.popen("md5sum %s" %fileName).read()
-    print (f"Local ---> {os.path.split(fileName)[1]} size: {os.path.getsize(fileName)} \t MD5: {localFileMD5.split()[0]}")
-    print (f"Remote --> {os.path.split(fileName)[1]} size: {obj.size} \t MD5: {obj.etag}")
     if os.path.getsize(fileName) == obj.size and localFileMD5.split()[0] == obj.etag:
-      print("Looks Good!")
+      print("true")
+      sys.exit()
       
-    else:
-        print("WARNING: THE LOCAL AND REMOTE FILES ARE DIFFERENT!!")
-        foundFile = False
-
-if (foundFile == False):
-  print(f"\nThe local file \"{fileName}\" was not found on TACC's Corral Storage System") 
-print("")
+print("false")
