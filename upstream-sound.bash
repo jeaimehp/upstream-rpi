@@ -1,6 +1,6 @@
 #!/bin/bash
 RECORDTIME=$1
-HWDEVICE=`echo "$(arecord -l |grep 'card.*USB' | sed 's/.*card //' | cut -d " " -f 1|cut -c 1),$(arecord -l |grep card | sed 's/.*device //' | cut -d " " -f 1|cut -c 1)"`
+HWDEVICE=`echo "$(arecord -l |grep 'card.*USB' | sed 's/.*card //' | cut -d " " -f 1|cut -c 1),$(arecord -l |grep 'card.*USB' | sed 's/.*device //' | cut -d " " -f 1|cut -c 1)"`
 if [ -z "$RECORDTIME" ]
 then
 	echo "Recording with default 10 seconds\n"
