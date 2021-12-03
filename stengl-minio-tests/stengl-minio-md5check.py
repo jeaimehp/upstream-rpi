@@ -1,5 +1,56 @@
-import os
+#######################################
+# Progam Name: stengl-minio-md5check.py
+# Written By: Je'aime Powell (jpowell@tacc.utexas.edu)
+# Original Date: 12/2/21
+# Language: Python3
+# Purpose: This progam is to be used on UPSTREAM-RPI
+#    sensors to test if the provided files exists on 
+#    TACC Corral filesystem remotely and if they are the same.
+#    Corral Path from Stampede2: /corral/utexas/Stengl-Wyer-Remote-S/S3/
+#
+# !!!NOTE BEFORE UPLOADING TO REPOSITORY!!!
+# Be sure to censor the access and secret keys from the "MiniIO API Setup" Section if written in clear text!
+#
+# Tested Platforms:
+#    - MacOS
+#    - RPI400 with Raspbian Buster (32-bit)
+#	
+# Required Libraries:
+#    os - builtin 
+#    sys - builtin
+#    minio - Installed with "pip3 install minio"
+#    dotenv - Installed with "pip3 install python-dotenv"
+#
+# Usage: "python3 stengl-miniio-md5check.py filepath/filename"
+#
+# Example output:
+#    pi@raspberrypi-dev:~/upstream/stengl-minio-tests $ python3 stengl-minio-md5check.py ../sound/1638493265.wav
+#
+#    FILE NAME 	| FILE SIZE(bytes) 	| LAST MODIFIED DATE 	| MD5 CHECKSUM
+#    -----------------------------------------------------------
+#    1638493265.wav 	 1764044 	 2021-12-03 02:35:01.833000+00:00 	 762beb5f700f26346723756002b37e55
+#
+#    Checking File Sizes and MD5 Checksum's between the local and remote versions of 1638493265.wav
+#    Local ---> 1638493265.wav size: 1764044 	 MD5: 762beb5f700f26346723756002b37e55
+#    Remote --> 1638493265.wav size: 1764044 	 MD5: 762beb5f700f26346723756002b37e55
+#    Looks Good!
+########################################
+
 from minio import Minio
+import os
+import sys
+
+bucketName = 'upstream-recordings'
+envPath = '/home/pi/upstream/stengl-minio-tests/.env'
+
+if len(sys.argv) < 2:
+  print("\nERROR: Filename and Path Needed \nUSAGE: python3 stengl-minio-md5check.py path/to/file/filename\n")
+  sys.exit()
+elif os.path.exists(sys.argv[1]) == False:
+  print("\nERROR: File does not exist \nUSAGE: python3 stengl-minio-md5check.py path/to/file/filename\n")
+  sys.exit()
+
+fileName = sys.argv[1]
 
 # Importing API keys from .env file
 # Ref: Tutorial https://www.youtube.com/watch?v=YdgIWTYQ69A
@@ -7,7 +58,8 @@ from minio import Minio
 
 from dotenv import load_dotenv
 # Imports enviromental variables
-load_dotenv()
+load_dotenv(dotenv_path=envPath) 
+
 
 #######################################
 # MiniIO API setup                    #
@@ -33,18 +85,26 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 client = Minio(SERVER, ACCESS_KEY, SECRET_KEY)
 
-# Print the available buckets
-print("Buckets found:")
-buckets = client.list_buckets()
-print(buckets)
+objects = client.list_objects(bucketName, prefix='/')
 
-# Print Objects (files) in the buckets
-
-for bucket in buckets:
-  print("\n----------")
-  print(f"Bucket \"{bucket.name}\" files/directories (objects) found.")
-  print("FILE NAME \t| FILE SIZE(bytes) \t| LAST MODIFIED DATE \t| MD5 CHECKSUM")
-  print("-----------------------------------------------------------")
-  objects = client.list_objects(bucket.name, prefix='/')
-  for obj in objects:
+# This bit of code checks the bucket for the uploaded file then shows the size of the local verses the remote file
+foundFile = False
+for obj in objects:
+  if obj.object_name == os.path.split(fileName)[1]:
+    foundFile = True
+    print("\nFILE NAME \t| FILE SIZE(bytes) \t| LAST MODIFIED DATE \t| MD5 CHECKSUM")
+    print("-----------------------------------------------------------")
     print(f"{obj.object_name} \t {obj.size} \t {obj.last_modified} \t {obj.etag}")
+    
+    # Comparing sizes between local and remote files
+    print(f"\nChecking File Sizes and MD5 Checksum's between the local and remote versions of {os.path.split(fileName)[1]}")
+    localFileMD5 = os.popen("md5sum %s" %fileName).read()
+    print (f"Local ---> {os.path.split(fileName)[1]} size: {os.path.getsize(fileName)} \t MD5: {localFileMD5.split()[0]}")
+    print (f"Remote --> {os.path.split(fileName)[1]} size: {obj.size} \t MD5: {obj.etag}")
+    if os.path.getsize(fileName) == obj.size and localFileMD5.split()[0] == obj.etag:
+      print("Looks Good!")
+      
+    else:
+        print("WARNING: THE LOCAL AND REMOTE FILES ARE DIFFERENT!!")
+        foundFile = False
+print("")

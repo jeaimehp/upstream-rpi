@@ -4,8 +4,8 @@
 # Original Date: 12/2/21
 # Language: Python3
 # Purpose: This progam is to be used on UPSTREAM-RPI
-#    sensors to test if the unit can write to the 
-#    TACC Corral filesystem remotely.
+#    writes the given file to the  
+#    TACC Corral filesystem remotely and then verifies.
 #    Corral Path from Stampede2: /corral/utexas/Stengl-Wyer-Remote-S/S3/
 #
 # !!!NOTE BEFORE UPLOADING TO REPOSITORY!!!
