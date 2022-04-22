@@ -20,7 +20,7 @@ cat $SOUNDFILES_DIR/../data/sound-xfer-temp.log-$TIMESTAMP | while read line; do
 	echo $FILEEXISTS
 	if [ "$FILEEXISTS" = true ]; then
 	      echo "File $line already sync'd removing from local machine"
-		  #rm $SOUNDFILES_DIR/$line
+		  rm $SOUNDFILES_DIR/$line
         else 
               echo "File $SOUNDFILES_DIR/$line needs to be transfered (sent) to Corral"
 	      # /usr/bin/python3 $SOUNDFILES_DIR/../stengl-minio-tests/stengl-minio-md5check.py $SOUNDFILES_DIR/$line
