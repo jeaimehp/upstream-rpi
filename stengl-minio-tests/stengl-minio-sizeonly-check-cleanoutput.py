@@ -44,10 +44,10 @@ bucketName = 'upstream-recordings'
 envPath = '/home/pi/upstream/stengl-minio-tests/.env'
 
 if len(sys.argv) < 2:
-  print("\nERROR: Filename and Path Needed \nUSAGE: python3 stengl-minio-md5check.py path/to/file/filename\n")
+  print("\nERROR: Filename and Path Needed \nUSAGE: python3 stengl-minio-sizeonly-check.py path/to/file/filename\n")
   sys.exit()
 elif os.path.exists(sys.argv[1]) == False:
-  print("\nERROR: File does not exist \nUSAGE: python3 stengl-minio-md5check.py path/to/file/filename\n")
+  print("\nERROR: File does not exist \nUSAGE: python3 stengl-minio-sizeonly-check.py path/to/file/filename\n")
   sys.exit()
 
 fileName = sys.argv[1]
@@ -93,7 +93,7 @@ for obj in objects:
   if obj.object_name == os.path.split(fileName)[1]:
     foundFile = True
     # Comparing sizes between local and remote files
-    localFileMD5 = os.popen("md5sum %s" %fileName).read()
+    #localFileMD5 = os.popen("md5sum %s" %fileName).read()
     if os.path.getsize(fileName) == obj.size: #MD5 not working through minio and ##localFileMD5.split()[0] == obj.etag:
       print("true")
       sys.exit()
