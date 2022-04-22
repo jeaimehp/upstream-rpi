@@ -17,7 +17,10 @@ echo "Checking files."
 cat $SOUNDFILES_DIR/../data/sound-xfer-temp.log-$TIMESTAMP | while read line; do
 	if [[ `(/usr/bin/python3 $SOUNDFILES_DIR/../stengl-minio-tests/stengl-minio-sizeonly-check-cleanoutput.py $SOUNDFILES_DIR/$line)` ]]; then
 	      echo "File $line already sync'd removing from local machine"
-	      rm $SOUNDFILES_DIR/$line
+	      echo "Ouput from check"
+		  CHECKOUT = `(/usr/bin/python3 $SOUNDFILES_DIR/../stengl-minio-tests/stengl-minio-sizeonly-check-cleanoutput.py $SOUNDFILES_DIR/$line)` 
+		  echo $CHECKOUT
+		  #rm $SOUNDFILES_DIR/$line
         else 
               echo "File $SOUNDFILES_DIR/$line needs to be transfered (sent) to Corral"
 	      # /usr/bin/python3 $SOUNDFILES_DIR/../stengl-minio-tests/stengl-minio-md5check.py $SOUNDFILES_DIR/$line
