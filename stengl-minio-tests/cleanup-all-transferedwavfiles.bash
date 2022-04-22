@@ -15,11 +15,11 @@ echo "Checking files."
 
 #cat $SOUNDFILES_DIR/../data/sound-xfer-temp.log-$TIMESTAMP | while read line;do /usr/bin/python3 $SOUNDFILES_DIR/../stengl-minio-tests/sendtocorral-minio.py $SOUNDFILES_DIR/$line; done
 cat $SOUNDFILES_DIR/../data/sound-xfer-temp.log-$TIMESTAMP | while read line; do
-	if [[ `(/usr/bin/python3 $SOUNDFILES_DIR/../stengl-minio-tests/stengl-minio-sizeonly-check-cleanoutput.py $SOUNDFILES_DIR/$line)` ]]; then
+	FILEEXISTS=$(/usr/bin/python3 $SOUNDFILES_DIR/../stengl-minio-tests/stengl-minio-sizeonly-check-cleanoutput.py $SOUNDFILES_DIR/$line) 
+	echo "Ouput from check"
+	echo $FILEEXISTS
+	if [ "$FILEEXISTS" = true ]; then
 	      echo "File $line already sync'd removing from local machine"
-	      echo "Ouput from check"
-		  JPCHECKOUT=$(/usr/bin/python3 $SOUNDFILES_DIR/../stengl-minio-tests/stengl-minio-sizeonly-check-cleanoutput.py $SOUNDFILES_DIR/$line) 
-		  echo $JPCHECKOUT
 		  #rm $SOUNDFILES_DIR/$line
         else 
               echo "File $SOUNDFILES_DIR/$line needs to be transfered (sent) to Corral"
