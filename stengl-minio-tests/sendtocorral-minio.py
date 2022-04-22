@@ -114,7 +114,7 @@ for obj in objects:
     localFileMD5 = os.popen("md5sum %s" %fileName).read()
     print (f"Local ---> {os.path.split(fileName)[1]} size: {os.path.getsize(fileName)} \t MD5: {localFileMD5.split()[0]}")
     print (f"Remote --> {os.path.split(fileName)[1]} size: {obj.size} \t MD5: {obj.etag}")
-    if os.path.getsize(fileName) == obj.size and localFileMD5.split()[0] == obj.etag:
+    if os.path.getsize(fileName) == obj.size: # and localFileMD5.split()[0] == obj.etag:
       print("Looks Good!")
       
     else:
