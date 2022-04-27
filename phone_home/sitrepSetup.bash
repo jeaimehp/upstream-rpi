@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "installing python modules"
-python -m pip install -r pythonSitrepRequirements.txt
+sudo pip install -r pythonSitrepRequirements.txt
 
 echo "Create .env file in this directory with Discord credentials (token)"
 
