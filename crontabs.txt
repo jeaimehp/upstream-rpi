@@ -23,3 +23,7 @@
 
 #Sound file (wav)  clean up
 * 14 1-31/2 * * /home/pi/upstream/stengl-minio-tests/cleanup-all-transferedwavfiles.bash >> /home/pi/upstream/data/soundfile-cleanup-`(/bin/date +%Y%m%d)`.log
+
+#Sitrep
+0 12 * * * python3 /home/pi/pipy_bot/bot.py
+
