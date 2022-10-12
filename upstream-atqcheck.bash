@@ -2,7 +2,7 @@
 OUTPUT=`/usr/bin/atq`
 
 ## Uncomment for debugging
-#echo $OUTPUT
+echo $OUTPUT
 
 if [ -z "${OUTPUT}" ]; then
 	echo "No scheduled jobs. Setting rescordings"

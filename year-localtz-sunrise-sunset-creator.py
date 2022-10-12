@@ -15,9 +15,9 @@ def days_cur_month(m):
     ndays = monthrange(y,m)
     monthList = []
     for d in range(1,int(ndays[1])+1):
-        #print (d)
+        print (d)
         dateObject = datetime.date(y, m, d)
-        #print (dateObject.strftime('%Y-%m-%d'))
+        print (dateObject.strftime('%Y-%m-%d'))
         monthList.append(dateObject.strftime('%Y-%m-%d'))
     return(monthList)
 
@@ -26,13 +26,13 @@ def utc_localtime(datetimeObject):
   to_zone = tz.tzlocal()
   datetimeObject = datetimeObject.replace(tzinfo=from_zone)
   central = datetimeObject.astimezone(to_zone)
-  #print("Was {} now {}".format(datetimeObject.strftime('%m/%d/%Y %I:%M %p'),central.strftime('%m/%d/%Y %I:%M %p')))
+  print("Was {} now {}".format(datetimeObject.strftime('%m/%d/%Y %I:%M %p'),central.strftime('%m/%d/%Y %I:%M %p')))
   return(central.strftime('%I:%M %p')) 
 
 def sunrise_sunset(dateList):
   
   #Test URL for API
-  #URL = "https://api.sunrise-sunset.org/json?lat=30.087479&lng=-97.169851&date=today&formatted=0"
+  URL = "https://api.sunrise-sunset.org/json?lat=30.087479&lng=-97.169851&date=today&formatted=0"
 
   ## Ref: https://sunrise-sunset.org/api
   ## Usage limits and attribution
@@ -45,8 +45,8 @@ def sunrise_sunset(dateList):
     data = r.json()
     sunset = datetime.datetime.strptime(data['results']['sunset'][0:19],'%Y-%m-%dT%H:%M:%S')
     sunrise = datetime.datetime.strptime(data['results']['sunrise'][0:19],'%Y-%m-%dT%H:%M:%S')
-    #print (URL)
-    #print (utc_localtime(sunrise))
+    print (URL)
+    print (utc_localtime(sunrise))
     print("{} {} {}".format(sunrise.strftime('%m/%d/%Y'),utc_localtime(sunrise),utc_localtime(sunset)))
 
 for month in range(12):

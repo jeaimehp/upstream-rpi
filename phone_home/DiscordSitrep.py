@@ -35,7 +35,7 @@ TOKEN = os.getenv("TOKEN")
 
 
 description= 'situation report'
-bot=commands.Bot(command_prefix='?penguin', description=description)
+bot=commands.Bot(command_prefix='?bunty', description=description)
 
 @bot.event
 async def on_ready():

@@ -1,0 +1,27 @@
+@reboot sudo iw wlan0 set power_save off
+# Sound using Andrea
+0 12 * * * /home/pi/upstream/at-30before-sunrise-tomorrow.bash "/home/pi/upstream/upstream-sound.bash 3600" >> /home/pi/upstream/data/soundsetting.log
+0 12 * * * /home/pi/upstream/at-30before-sunset.bash "/home/pi/upstream/upstream-sound.bash 3600" >> /home/pi/upstream/data/soundsetting.log
+
+#Sound using SEEED Respeaker Hat (6-mic/8-channel)
+
+#0 12 * * * /home/pi/upstream/at-30before-sunrise-tomorrow.bash "/home/pi/upstream/upstream-sound-respeaker.bash 3600" >> /home/pi/upstream/data/soundsetting-`(/bin/date +%Y%m%d)`.log
+#0 12 * * * /home/pi/upstream/at-30before-sunset.bash "/home/pi/upstream/upstream-sound-respeaker.bash 3600" >> /home/pi/upstream/data/soundsetting-`(/bin/date +%Y%m%d)`.log
+
+#Check Sunset Job
+* 14 * * * /home/pi/upstream/upstream-atqcheck.bash  >> /home/pi/upstream/cron_captures.log 
+
+0 11 * * * /home/pi/upstream/bootinfo.bash|bash >/dev/null 2>&1
+#0 15 * * * /home/pi/upstream/upload-sound-gdrive.bash >/dev/null 2>&1
+
+#Sound file (wav) transfers
+* 11 * * * /home/pi/upstream/stengl-minio-tests/transferwavfiles.bash >> /home/pi/upstream/data/sound-xfer.log
+
+#Sound file (wav)  clean up
+* 14 1-31/2 * * /home/pi/upstream/stengl-minio-tests/cleanup-all-transferedwavfiles.bash >> /home/pi/upstream/data/soundfile-cleanup.log
+
+#Sitrep
+0 12 * * * python3 /home/pi/upstream/phone_home/DiscordSitrep.py
+
+#Record BME and Sensor Data 
+* * * * * /usr/bin/python3 /home/pi/Hook-Deployment/sensor_collect.py >> /DATA/logs/sensors.log
